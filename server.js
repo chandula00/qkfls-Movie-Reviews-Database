@@ -40,6 +40,7 @@ function initDB() {
 service.setServiceUrl(process.env.CLOUDANT_URL);
 }
 
+
 if (CLOUDANT_USERNAME && CLOUDANT_PASSWORD && CLOUDANT_URL) {
   initDB();
   // Create a new "moviesDb" database.
@@ -56,6 +57,7 @@ if (CLOUDANT_USERNAME && CLOUDANT_PASSWORD && CLOUDANT_URL) {
     }
   });
 } 
+
 
 if (NLU_APIKEY && NLU_URL) {
   const NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1');
@@ -153,6 +155,7 @@ app.post("/reviews", function (request, response) {
       });
   }
 });
+
 
 function checkServiceCredentials() {
   let errors = [];
