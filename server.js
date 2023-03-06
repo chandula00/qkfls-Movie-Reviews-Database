@@ -24,13 +24,13 @@ NLU_APIKEY = process.env.NLU_APIKEY;
 NLU_URL = process.env.NLU_URL;
 CLOUDANT_URL = process.env.CLOUDANT_URL;
 CLOUDANT_USERNAME = process.env.CLOUDANT_USERNAME;
-CLOUDANT_PASSWORD = process.env.CLOUDANT_PASSWORD;
+//CLOUDANT_PASSWORD = process.env.CLOUDANT_PASSWORD;
 
 
 function initDB() {
   const authenticator = new BasicAuthenticator({
       username: process.env.CLOUDANT_USERNAME,
-      password: process.env.CLOUDANT_PASSWORD
+      //password: process.env.CLOUDANT_PASSWORD
   });
 
     service = new CloudantV1({
@@ -41,7 +41,7 @@ service.setServiceUrl(process.env.CLOUDANT_URL);
 }
 
 
-if (CLOUDANT_USERNAME && CLOUDANT_PASSWORD && CLOUDANT_URL) {
+if (CLOUDANT_USERNAME && CLOUDANT_URL) {
   initDB();
   // Create a new "moviesDb" database.
 
